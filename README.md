@@ -10,19 +10,33 @@
 
 ======> 编译gvim + vimgdb步骤：
 sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial
+
 sudo apt-get build-dep vim
+
 git clone https://github.com/cpiger/vimgdb-for-vim7.4.git
+
 wget ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2
+
 cd vim74/..    ;  patch -p0 < vimgdb-for-vim7.4/vim74.patch 
+
 comment BINDIR, MANDIR, DATADIR in src/Makefile to customize install dir by --prefix
+
 ./configure --enable-multibyte --enable-fontset --enable-cscope --enable-gui=gtk2 --with-features=big --with-features=huge       --enable-gdb --with-compiledby=dong 
+
 make CFLAGS="-O2 -D_FORTIFY_SOURCE=1" -j4
+
 make install
+
 cp vimgdb-for-vim7.4/vimgdb_runtime/* ~/.vim/ -r
+
 gvim 中敲  :helptags ~/.vim/doc 
+
 gvim中敲   :help vimgdb
+
 gvim中敲   :run macros/gdb_mappings.vim 加载gdb mapping, 加载后，一些按键就被定义为调试命令(vimgdb定义的键绑定见":help gdb-mappings")。按<F7>可以在按键的缺省定义和调试命令间切换
+
 分隔出一个名为gdb-variables的窗口,输入vim命名 :bel 20vsplit gdb-variables，用"v"命令选中变量i，按"CTRL-P"命令，把变量i加入到监视窗口，也可以在vimgdb 命令窗口输入createvar *r ，把*r加入变量窗口
+
 
 
 
