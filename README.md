@@ -83,11 +83,19 @@ XUQNQN
 git push origin ide_4.1
 
 git checkout remotes/origin/ide_4.1
+
 git checkout master
+
 git branch -d ide_4.1
+
 git branch -t ide4.1 remotes/origin/ide_4.1
+
 git checkout ide4.1
+
 git add README.md
+
 git commit -m "test branch"
+
 git push origin HEAD:ide_4.1
+
 
