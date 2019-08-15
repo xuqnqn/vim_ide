@@ -78,3 +78,5 @@ List of key mappings in 'gdb_mappings.vim':
 
     vimgdb窗口中，连续两次ctrl + c可以interrupt程序执行。
 
+XUQNQN
+
