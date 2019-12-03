@@ -85,7 +85,7 @@ set encoding=utf-8
 let g:NERDTreeDirArrows=0
 
 "file filter, use regular expression in [], ignore suffix with: .o, .ko, .gz
-let NERDTreeIgnore = ['.*\.o$','.*\.ko$','.*\.gz$']
+let NERDTreeIgnore = ['.*\.o$','.*\.lo$','.*\.ko$','.*\.gz$','^cscope.*']
 
 " auto open nerdtree
 "autocmd BufRead * . 
